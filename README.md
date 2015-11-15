@@ -4,7 +4,11 @@
 
 An extension of the Preference support library that includes a NumberPicker dialog and various fixes.
 
+Currently works well and has been tested on a wide variety of SDK 14+ devices/emulators, better support for earlier versions will be added later.
+
 Current minimum SDK is 11 due to align with NumberPicker, this will be changed to a back ported version in a future version to support 7+.
+
+Contributions are very welcome, please submit a pull request.
 
 ## Download
 
@@ -51,9 +55,9 @@ Note: Full package name is not required as the preferences are in the same packa
 
 ## Styling
 
-There seem to be a number of bugs in the library, for simplicity use one of the `PreferenceTheme` parent themes provided.
+There are currently a number of bugs in the Google library, using the provided `PreferenceTheme` parent styles for your settings screen should provide a consistent experience on SDK 14+ devices and fallback styles on earlier versions.
 
-Some of the fixes were taken from: https://github.com/Gericop/Android-Support-Preference-V7-Fix
+Some of the styling fixes were taken from or inspired by: https://github.com/Gericop/Android-Support-Preference-V7-Fix
 
 ## License
 

@@ -36,7 +36,7 @@ Replace imported `android.support.v7.preference.PreferenceFragmentCompat` with `
         app:minValue="1"
         app:valueAsSummary="true" />
         
-Note: Full package name is not required as the preference is in the same package as the preferences support library
+Note: Full package name is not required as the preference is in the same package as the preference support library
 
 ## Custom attributes
 
@@ -44,6 +44,16 @@ Note: Full package name is not required as the preference is in the same package
 * `maxValue` - The maximum value of the number picker
 * `valueAsSummary` - When `true`, sets the current value as the summary text
 * `descendantFocusable` - When `false`, sets descendant focusability to `FOCUS_BLOCK_DESCENDANTS` preventing the EditText from gaining focus
+
+## Styling
+
+Use the existing preference support library styles in your theme, e.g.
+
+    <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+    
+    <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14</item>
+    
+    <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
 
 ## License
 

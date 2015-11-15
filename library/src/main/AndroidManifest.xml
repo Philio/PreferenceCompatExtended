@@ -1,4 +1,4 @@
-<manifest package="me.philio.numberpickerpreference">
+<manifest package="me.philio.preferencecompatextended">
 
     <uses-sdk xmlns:tools="http://schemas.android.com/tools"
         tools:overrideLibrary="android.support.v14.preference" />

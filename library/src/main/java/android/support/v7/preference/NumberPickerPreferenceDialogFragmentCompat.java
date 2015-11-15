@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.NumberPicker;
 
-import me.philio.numberpickerpreference.R;
+import me.philio.preferencecompatextended.R;
 
 public class NumberPickerPreferenceDialogFragmentCompat extends PreferenceDialogFragmentCompat {
 

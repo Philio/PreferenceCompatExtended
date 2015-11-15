@@ -1,4 +1,4 @@
-package me.philio.numberpickerpreference.demo;
+package me.philio.preferencecompatextended.demo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

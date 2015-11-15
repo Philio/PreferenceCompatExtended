@@ -6,7 +6,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.AttributeSet;
 
-import me.philio.numberpickerpreference.R;
+import me.philio.preferencecompatextended.R;
 
 public class NumberPickerPreference extends DialogPreference {
 

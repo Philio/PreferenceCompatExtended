@@ -1,8 +1,10 @@
-# NumberPickerPreference
+# PreferenceCompatExtended
 
 ## About
 
-An extension of the Preference support library that includes a NumberPicker dialog
+An extension of the Preference support library that includes a NumberPicker dialog and various fixes.
+
+Current minimum SDK is 11 due to align with NumberPicker, this will be changed to a back ported version in a future version to support 7+.
 
 ## Download
 
@@ -10,23 +12,27 @@ An extension of the Preference support library that includes a NumberPicker dial
 
 Add the following to your `build.gradle`:
 
-    compile 'me.philio:numberpickerpreference:0.1.0'
+    compile 'me.philio:preferencecompatextended:0.2.0'
     
 The latest v7 and v14 preference libraries are included and are not required
     
 ## Usage
 
-### Use included fragment
-
-#### New project
+### New project
 
 Create a fragment that extends the included `PreferenceFragmentCompat`
 
-#### Existing project
+### Existing project
 
-Replace imported `android.support.v7.preference.PreferenceFragmentCompat` with `me.philio.numberpickerpreference.PreferenceFragmentCompat`
+Replace imported `android.support.v7.preference.PreferenceFragmentCompat` with `me.philio.preferencecompatextended.PreferenceFragmentCompat`
 
-### Add to preference screen
+## Custom preferences
+
+Note: Full package name is not required as the preferences are in the same package as the preference support library, Android Studio produces a warning but your project will build and run without issue.
+
+### NumberPickerPreference
+
+#### Add to XML
 
     <NumberPickerPreference
         android:defaultValue="1"
@@ -36,9 +42,7 @@ Replace imported `android.support.v7.preference.PreferenceFragmentCompat` with `
         app:minValue="1"
         app:valueAsSummary="true" />
         
-Note: Full package name is not required as the preference is in the same package as the preference support library
-
-## Custom attributes
+#### Custom attributes
 
 * `minValue` - The minimum value of the number picker
 * `maxValue` - The maximum value of the number picker
@@ -47,13 +51,7 @@ Note: Full package name is not required as the preference is in the same package
 
 ## Styling
 
-Use the existing preference support library styles in your theme, e.g.
-
-    <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
-    
-    <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14</item>
-    
-    <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+There seem to be a number of bugs in the library, for simplicity use one of the `PreferenceTheme` parent themes
 
 ## License
 

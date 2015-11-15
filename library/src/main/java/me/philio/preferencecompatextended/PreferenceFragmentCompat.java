@@ -1,4 +1,4 @@
-package me.philio.numberpickerpreference;
+package me.philio.preferencecompatextended;
 
 import android.support.v4.app.DialogFragment;
 import android.support.v7.preference.NumberPickerPreference;

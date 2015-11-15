@@ -1,8 +1,8 @@
-package me.philio.numberpickerpreference.demo;
+package me.philio.preferencecompatextended.demo;
 
 import android.os.Bundle;
 
-import me.philio.numberpickerpreference.PreferenceFragmentCompat;
+import me.philio.preferencecompatextended.PreferenceFragmentCompat;
 
 public class SettingsFragment extends PreferenceFragmentCompat {
 

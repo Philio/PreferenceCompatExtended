@@ -53,11 +53,11 @@ Note: Full package name is not required as the preferences are in the same packa
 
 There seem to be a number of bugs in the library, for simplicity use one of the `PreferenceTheme` parent themes provided.
 
-Some of the fixes were taken from @Gericop's repo: https://github.com/Gericop/Android-Support-Preference-V7-Fix
+Some of the fixes were taken from: https://github.com/Gericop/Android-Support-Preference-V7-Fix
 
 ## License
 
-Copyright 2015 Phil Bayfield
+Copyright 2015 Phil Bayfield  
 Copyright (C) 2015 The Android Open Source Project
 
 Licensed under the Apache License, Version 2.0 (the "License");

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Theme">
+        <!-- Default style for NumberPickerPreference. -->
+        <attr name="numberPickerPreferenceStyle" format="reference" />
+    </declare-styleable>
+    
+    <declare-styleable name="NumberPickerPreference">
+        <attr name="minValue" format="integer" />
+        <attr name="maxValue" format="integer" />
+        <attr name="valueAsSummary" format="boolean" />
+        <attr name="descendantFocusable" format="boolean" />
+    </declare-styleable>
+</resources>

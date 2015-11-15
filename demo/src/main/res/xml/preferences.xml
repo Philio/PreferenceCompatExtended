@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <NumberPickerPreference
+        android:defaultValue="1"
+        android:key="number_picker_1"
+        android:summary="Pick a number between 1 and 50"
+        android:title="A Number picker"
+        app:maxValue="50"
+        app:minValue="1" />
+    <NumberPickerPreference
+        android:defaultValue="1"
+        android:key="number_picker_2"
+        android:title="My value is the summary"
+        app:maxValue="100"
+        app:minValue="1"
+        app:valueAsSummary="true" />
+    <NumberPickerPreference
+        android:defaultValue="1"
+        android:key="number_picker_3"
+        android:title="My picker just scrolls"
+        app:descendantFocusable="false"
+        app:maxValue="100"
+        app:minValue="1"
+        app:valueAsSummary="true" />
+    <EditTextPreference
+        android:defaultValue=""
+        android:key="edit_text"
+        android:summary="Just for comparison"
+        android:title="An EditTextPreference" />
+</PreferenceScreen>

@@ -16,7 +16,7 @@ Contributions are very welcome, please submit a pull request.
 
 Add the following to your `build.gradle`:
 
-    compile 'me.philio:preferencecompatextended:0.2.2'
+    compile 'me.philio:preferencecompatextended:0.2.1'
     
 The latest v7 and v14 preference libraries are included and are not required
     

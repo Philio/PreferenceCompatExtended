@@ -8,7 +8,7 @@ An extension of the Preference support library that includes a NumberPicker dial
 
 Currently works well and has been tested on a wide variety of SDK 14+ devices/emulators, better support for earlier versions will be added later.
 
-Current minimum SDK is 11 due to align with NumberPicker, this will be changed to a back ported version in a future version to support 7+.
+Current minimum SDK is 11 to align with NumberPicker, this will be changed to a back ported version in a future version to support 7+.
 
 Contributions are very welcome, please submit a pull request.
 

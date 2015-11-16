@@ -4,6 +4,8 @@
 
 An extension of the Preference support library that includes a NumberPicker dialog and various fixes.
 
+![](https://raw.githubusercontent.com/Philio/PreferenceCompatExtended/master/side-by-side.png)
+
 Currently works well and has been tested on a wide variety of SDK 14+ devices/emulators, better support for earlier versions will be added later.
 
 Current minimum SDK is 11 due to align with NumberPicker, this will be changed to a back ported version in a future version to support 7+.

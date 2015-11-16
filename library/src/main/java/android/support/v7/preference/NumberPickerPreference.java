@@ -88,6 +88,8 @@ public class NumberPickerPreference extends DialogPreference {
         final SavedState savedState = new SavedState(superState);
         savedState.minValue = minValue;
         savedState.maxValue = maxValue;
+        savedState.valueAsSummary = valueAsSummary;
+        savedState.descendantFocusable = descendantFocusable;
         savedState.value = value;
         return savedState;
     }
@@ -103,6 +105,8 @@ public class NumberPickerPreference extends DialogPreference {
         super.onRestoreInstanceState(savedState.getSuperState());
         minValue = savedState.minValue;
         maxValue = savedState.maxValue;
+        valueAsSummary = savedState.valueAsSummary;
+        descendantFocusable = savedState.descendantFocusable;
         value = savedState.value;
     }
 
@@ -110,12 +114,16 @@ public class NumberPickerPreference extends DialogPreference {
 
         private int minValue;
         private int maxValue;
+        private boolean valueAsSummary;
+        private boolean descendantFocusable;
         private int value;
 
         public SavedState(Parcel source) {
             super(source);
             minValue = source.readInt();
             maxValue = source.readInt();
+            valueAsSummary = (boolean) source.readValue(null);
+            descendantFocusable = (boolean) source.readValue(null);
             value = source.readInt();
         }
 
@@ -128,6 +136,8 @@ public class NumberPickerPreference extends DialogPreference {
             super.writeToParcel(dest, flags);
             dest.writeInt(minValue);
             dest.writeInt(maxValue);
+            dest.writeValue(valueAsSummary);
+            dest.writeValue(descendantFocusable);
             dest.writeInt(value);
         }
 

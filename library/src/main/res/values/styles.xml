@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="PreferenceTheme" parent="Theme.AppCompat">
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
-    </style>
-
-    <style name="PreferenceTheme.NoActionBar" parent="Theme.AppCompat.NoActionBar">
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
-    </style>
-
-    <style name="PreferenceTheme.Light" parent="Theme.AppCompat.Light">
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
-    </style>
-
-    <style name="PreferenceTheme.Light.DarkActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
-    </style>
-
-    <style name="PreferenceTheme.Light.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
-    </style>
-
     <style name="PreferenceThemeOverlay">
         <item name="preferenceScreenStyle">@style/Preference.PreferenceScreen</item>
         <item name="preferenceFragmentStyle">@style/PreferenceFragment</item>

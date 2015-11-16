@@ -16,7 +16,7 @@ Contributions are very welcome, please submit a pull request.
 
 Add the following to your `build.gradle`:
 
-    compile 'me.philio:preferencecompatextended:0.2.0'
+    compile 'me.philio:preferencecompatextended:0.2.1'
     
 The latest v7 and v14 preference libraries are included and are not required
     
@@ -55,7 +55,11 @@ Note: Full package name is not required as the preferences are in the same packa
 
 ## Styling
 
-There are currently a number of bugs in the Google library, using the provided `PreferenceTheme` parent styles for your settings screen should provide a consistent experience on SDK 14+ devices and fallback styles on earlier versions.
+In your theme just set the `preferenceTheme` to the provided `PreferenceThemeOverlay`:
+
+    <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+    
+For SDK 14+ devices this inherits from `PreferenceThemeOverlay.v14.Material` and fixes a number of bugs that currently exist in the Google libraries.
 
 Some of the styling fixes were taken from or inspired by: https://github.com/Gericop/Android-Support-Preference-V7-Fix
 

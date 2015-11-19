@@ -1,9 +1,7 @@
 package android.support.v7.preference;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.NumberPicker;
 
 import me.philio.preferencecompatextended.R;
@@ -42,15 +40,16 @@ public class NumberPickerPreferenceDialogFragmentCompat extends PreferenceDialog
 
     @Override
     protected void onBindDialogView(View view) {
-        Log.e(getClass().getName(), "bind");
         numberPicker = (NumberPicker) view.findViewById(R.id.numberpicker);
         NumberPickerPreference preference = getNumberPickerPreference();
         numberPicker.setMinValue(preference.getMinValue());
         numberPicker.setMaxValue(preference.getMaxValue());
         numberPicker.setValue(restoredState ? restoredValue : preference.getValue());
-        if (!preference.isDescendantFocusable()) {
-            numberPicker.setDescendantFocusability(ViewGroup.FOCUS_BLOCK_DESCENDANTS);
+        if (preference.getDescendantFocusability() > 0) {
+            //noinspection ResourceType
+            numberPicker.setDescendantFocusability(preference.getDescendantFocusability());
         }
+        numberPicker.setWrapSelectorWheel(preference.isWrapSelectorWheel());
     }
 
     @Override

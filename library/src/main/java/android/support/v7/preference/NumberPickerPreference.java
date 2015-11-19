@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.AttributeSet;
+import android.view.ViewGroup;
 
 import me.philio.preferencecompatextended.R;
 
@@ -13,7 +14,9 @@ public class NumberPickerPreference extends DialogPreference {
     private int minValue;
     private int maxValue;
     private boolean valueAsSummary;
-    private boolean descendantFocusable;
+    private String summaryTemplate;
+    private int descendantFocusability;
+    private boolean wrapSelectorWheel;
 
     private int value;
 
@@ -24,7 +27,9 @@ public class NumberPickerPreference extends DialogPreference {
         minValue = typedArray.getInt(R.styleable.NumberPickerPreference_minValue, 0);
         maxValue = typedArray.getInt(R.styleable.NumberPickerPreference_maxValue, 0);
         valueAsSummary = typedArray.getBoolean(R.styleable.NumberPickerPreference_valueAsSummary, false);
-        descendantFocusable = typedArray.getBoolean(R.styleable.NumberPickerPreference_descendantFocusable, true);
+        summaryTemplate = typedArray.getString(R.styleable.NumberPickerPreference_summaryTemplate);
+        descendantFocusability = typedArray.getInt(R.styleable.NumberPickerPreference_descendantFocusability, ViewGroup.FOCUS_BEFORE_DESCENDANTS);
+        wrapSelectorWheel = typedArray.getBoolean(R.styleable.NumberPickerPreference_wrapSelectorWheel, true);
         typedArray.recycle();
     }
 
@@ -52,14 +57,26 @@ public class NumberPickerPreference extends DialogPreference {
         return valueAsSummary;
     }
 
-    public boolean isDescendantFocusable() {
-        return descendantFocusable;
+    public String getSummaryTemplate() {
+        return summaryTemplate;
+    }
+
+    public int getDescendantFocusability() {
+        return descendantFocusability;
+    }
+
+    public boolean isWrapSelectorWheel() {
+        return wrapSelectorWheel;
     }
 
     public void setValue(int value) {
         this.value = value;
-        if (isValueAsSummary()) {
-            setSummary(Integer.toString(value));
+        if (valueAsSummary) {
+            if (summaryTemplate != null) {
+                setSummary(String.format(summaryTemplate, value));
+            } else {
+                setSummary(Integer.toString(value));
+            }
         }
         persistInt(value);
     }
@@ -89,7 +106,9 @@ public class NumberPickerPreference extends DialogPreference {
         savedState.minValue = minValue;
         savedState.maxValue = maxValue;
         savedState.valueAsSummary = valueAsSummary;
-        savedState.descendantFocusable = descendantFocusable;
+        savedState.summaryTemplate = summaryTemplate;
+        savedState.descendantFocusability = descendantFocusability;
+        savedState.wrapSelectorWheel = wrapSelectorWheel;
         savedState.value = value;
         return savedState;
     }
@@ -106,7 +125,9 @@ public class NumberPickerPreference extends DialogPreference {
         minValue = savedState.minValue;
         maxValue = savedState.maxValue;
         valueAsSummary = savedState.valueAsSummary;
-        descendantFocusable = savedState.descendantFocusable;
+        summaryTemplate = savedState.summaryTemplate;
+        descendantFocusability = savedState.descendantFocusability;
+        wrapSelectorWheel = savedState.wrapSelectorWheel;
         value = savedState.value;
     }
 
@@ -115,7 +136,9 @@ public class NumberPickerPreference extends DialogPreference {
         private int minValue;
         private int maxValue;
         private boolean valueAsSummary;
-        private boolean descendantFocusable;
+        private String summaryTemplate;
+        private int descendantFocusability;
+        private boolean wrapSelectorWheel;
         private int value;
 
         public SavedState(Parcel source) {
@@ -123,7 +146,9 @@ public class NumberPickerPreference extends DialogPreference {
             minValue = source.readInt();
             maxValue = source.readInt();
             valueAsSummary = (boolean) source.readValue(null);
-            descendantFocusable = (boolean) source.readValue(null);
+            summaryTemplate = source.readString();
+            descendantFocusability = source.readInt();
+            wrapSelectorWheel = (boolean) source.readValue(null);
             value = source.readInt();
         }
 
@@ -137,7 +162,9 @@ public class NumberPickerPreference extends DialogPreference {
             dest.writeInt(minValue);
             dest.writeInt(maxValue);
             dest.writeValue(valueAsSummary);
-            dest.writeValue(descendantFocusable);
+            dest.writeString(summaryTemplate);
+            dest.writeInt(descendantFocusability);
+            dest.writeValue(wrapSelectorWheel);
             dest.writeInt(value);
         }
 

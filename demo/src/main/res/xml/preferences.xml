@@ -20,10 +20,12 @@
             android:defaultValue="1"
             android:key="number_picker_3"
             android:title="My picker just scrolls"
-            app:descendantFocusable="false"
+            app:descendantFocusability="blocksDescendants"
             app:maxValue="100"
             app:minValue="1"
-            app:valueAsSummary="true" />
+            app:summaryTemplate="%d is the selected number"
+            app:valueAsSummary="true"
+            app:wrapSelectorWheel="false" />
         <EditTextPreference
             android:defaultValue=""
             android:key="edit_text"

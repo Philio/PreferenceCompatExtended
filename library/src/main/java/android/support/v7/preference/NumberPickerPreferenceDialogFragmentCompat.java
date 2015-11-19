@@ -3,6 +3,7 @@ package android.support.v7.preference;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.NumberPicker;
+import android.widget.TextView;
 
 import me.philio.preferencecompatextended.R;
 
@@ -40,8 +41,9 @@ public class NumberPickerPreferenceDialogFragmentCompat extends PreferenceDialog
 
     @Override
     protected void onBindDialogView(View view) {
-        numberPicker = (NumberPicker) view.findViewById(R.id.numberpicker);
         NumberPickerPreference preference = getNumberPickerPreference();
+
+        numberPicker = (NumberPicker) view.findViewById(R.id.numberpicker);
         numberPicker.setMinValue(preference.getMinValue());
         numberPicker.setMaxValue(preference.getMaxValue());
         numberPicker.setValue(restoredState ? restoredValue : preference.getValue());
@@ -50,6 +52,9 @@ public class NumberPickerPreferenceDialogFragmentCompat extends PreferenceDialog
             numberPicker.setDescendantFocusability(preference.getDescendantFocusability());
         }
         numberPicker.setWrapSelectorWheel(preference.isWrapSelectorWheel());
+
+        TextView textView = (TextView) view.findViewById(R.id.subtitle);
+        textView.setText(preference.getSubtitleText());
     }
 
     @Override

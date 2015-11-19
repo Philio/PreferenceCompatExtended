@@ -18,7 +18,7 @@ Contributions are very welcome, please submit a pull request.
 
 Add the following to your `build.gradle`:
 
-    compile 'me.philio:preferencecompatextended:0.2.1'
+    compile 'me.philio:preferencecompatextended:1.0.0'
     
 The latest v7 and v14 preference libraries are included and are not required
     
@@ -52,15 +52,20 @@ Note: Full package name is not required as the preferences are in the same packa
 
 * `minValue` - The minimum value of the number picker
 * `maxValue` - The maximum value of the number picker
-* `valueAsSummary` - When `true`, sets the current value as the summary text
-* `descendantFocusable` - When `false`, sets descendant focusability to `FOCUS_BLOCK_DESCENDANTS` preventing the EditText from gaining focus
+* `valueAsSummary` - When `true`, sets the current value as the summary text, optionally formatted using `summaryFormat` if set
+* `summaryFormat` - String format to use as the summary text
+* `descendantFocusable` - Set the descendantFocusability of the number picker
+* `wrapSelectorWheel` - Sets whether the selector wheel should wrap around the minimum and maximum values
+* `subtitleText` - Set the subtitle text, shown to the right of the number picker in the dialog
 
 ## Styling
 
-In your theme just set the `preferenceTheme` to the provided `PreferenceThemeOverlay`:
+In your theme just set the `preferenceTheme` to the provided `PreferenceTheme`:
 
-    <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+    <item name="preferenceTheme">@style/PreferenceTheme</item>
     
+For SDK 11+ devices this inherits from `PreferenceOverlay`.
+
 For SDK 14+ devices this inherits from `PreferenceThemeOverlay.v14.Material` and fixes a number of bugs that currently exist in the Google libraries.
 
 Some of the styling fixes were taken from or inspired by: https://github.com/Gericop/Android-Support-Preference-V7-Fix

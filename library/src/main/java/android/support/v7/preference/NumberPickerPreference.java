@@ -14,9 +14,10 @@ public class NumberPickerPreference extends DialogPreference {
     private int minValue;
     private int maxValue;
     private boolean valueAsSummary;
-    private String summaryTemplate;
+    private String summaryFormat;
     private int descendantFocusability;
     private boolean wrapSelectorWheel;
+    private String subtitleText;
 
     private int value;
 
@@ -27,9 +28,10 @@ public class NumberPickerPreference extends DialogPreference {
         minValue = typedArray.getInt(R.styleable.NumberPickerPreference_minValue, 0);
         maxValue = typedArray.getInt(R.styleable.NumberPickerPreference_maxValue, 0);
         valueAsSummary = typedArray.getBoolean(R.styleable.NumberPickerPreference_valueAsSummary, false);
-        summaryTemplate = typedArray.getString(R.styleable.NumberPickerPreference_summaryTemplate);
+        summaryFormat = typedArray.getString(R.styleable.NumberPickerPreference_summaryFormat);
         descendantFocusability = typedArray.getInt(R.styleable.NumberPickerPreference_descendantFocusability, ViewGroup.FOCUS_BEFORE_DESCENDANTS);
         wrapSelectorWheel = typedArray.getBoolean(R.styleable.NumberPickerPreference_wrapSelectorWheel, true);
+        subtitleText = typedArray.getString(R.styleable.NumberPickerPreference_subtitleText);
         typedArray.recycle();
     }
 
@@ -57,10 +59,6 @@ public class NumberPickerPreference extends DialogPreference {
         return valueAsSummary;
     }
 
-    public String getSummaryTemplate() {
-        return summaryTemplate;
-    }
-
     public int getDescendantFocusability() {
         return descendantFocusability;
     }
@@ -69,11 +67,15 @@ public class NumberPickerPreference extends DialogPreference {
         return wrapSelectorWheel;
     }
 
+    public String getSubtitleText() {
+        return subtitleText;
+    }
+
     public void setValue(int value) {
         this.value = value;
         if (valueAsSummary) {
-            if (summaryTemplate != null) {
-                setSummary(String.format(summaryTemplate, value));
+            if (summaryFormat != null) {
+                setSummary(String.format(summaryFormat, value));
             } else {
                 setSummary(Integer.toString(value));
             }
@@ -106,9 +108,10 @@ public class NumberPickerPreference extends DialogPreference {
         savedState.minValue = minValue;
         savedState.maxValue = maxValue;
         savedState.valueAsSummary = valueAsSummary;
-        savedState.summaryTemplate = summaryTemplate;
+        savedState.summaryFormat = summaryFormat;
         savedState.descendantFocusability = descendantFocusability;
         savedState.wrapSelectorWheel = wrapSelectorWheel;
+        savedState.subtitleText = subtitleText;
         savedState.value = value;
         return savedState;
     }
@@ -125,9 +128,10 @@ public class NumberPickerPreference extends DialogPreference {
         minValue = savedState.minValue;
         maxValue = savedState.maxValue;
         valueAsSummary = savedState.valueAsSummary;
-        summaryTemplate = savedState.summaryTemplate;
+        summaryFormat = savedState.summaryFormat;
         descendantFocusability = savedState.descendantFocusability;
         wrapSelectorWheel = savedState.wrapSelectorWheel;
+        subtitleText = savedState.subtitleText;
         value = savedState.value;
     }
 
@@ -136,9 +140,10 @@ public class NumberPickerPreference extends DialogPreference {
         private int minValue;
         private int maxValue;
         private boolean valueAsSummary;
-        private String summaryTemplate;
+        private String summaryFormat;
         private int descendantFocusability;
         private boolean wrapSelectorWheel;
+        private String subtitleText;
         private int value;
 
         public SavedState(Parcel source) {
@@ -146,9 +151,10 @@ public class NumberPickerPreference extends DialogPreference {
             minValue = source.readInt();
             maxValue = source.readInt();
             valueAsSummary = (boolean) source.readValue(null);
-            summaryTemplate = source.readString();
+            summaryFormat = source.readString();
             descendantFocusability = source.readInt();
             wrapSelectorWheel = (boolean) source.readValue(null);
+            subtitleText = source.readString();
             value = source.readInt();
         }
 
@@ -162,9 +168,10 @@ public class NumberPickerPreference extends DialogPreference {
             dest.writeInt(minValue);
             dest.writeInt(maxValue);
             dest.writeValue(valueAsSummary);
-            dest.writeString(summaryTemplate);
+            dest.writeString(summaryFormat);
             dest.writeInt(descendantFocusability);
             dest.writeValue(wrapSelectorWheel);
+            dest.writeString(subtitleText);
             dest.writeInt(value);
         }
 

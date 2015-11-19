@@ -15,6 +15,7 @@
             android:title="My value is the summary"
             app:maxValue="100"
             app:minValue="1"
+            app:subtitleText="Bananas"
             app:valueAsSummary="true" />
         <NumberPickerPreference
             android:defaultValue="1"
@@ -23,7 +24,7 @@
             app:descendantFocusability="blocksDescendants"
             app:maxValue="100"
             app:minValue="1"
-            app:summaryTemplate="%d is the selected number"
+            app:summaryFormat="%d is the selected number"
             app:valueAsSummary="true"
             app:wrapSelectorWheel="false" />
         <EditTextPreference

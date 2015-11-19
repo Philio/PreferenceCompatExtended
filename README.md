@@ -64,7 +64,7 @@ In your theme just set the `preferenceTheme` to the provided `PreferenceTheme`:
 
     <item name="preferenceTheme">@style/PreferenceTheme</item>
     
-For SDK 11+ devices this inherits from `PreferenceOverlay`.
+For SDK 11+ devices this inherits from `PreferenceThemeOverlay`.
 
 For SDK 14+ devices this inherits from `PreferenceThemeOverlay.v14.Material` and fixes a number of bugs that currently exist in the Google libraries.
 

@@ -2,15 +2,13 @@
 
 ## About
 
-An extension of the Preference support library that includes a NumberPicker dialog and various fixes.
+An extension of the Preference support library that includes a NumberPicker dialog (no longer contains patches for Support library bugs as they've all been fixed).
 
 ![](https://raw.githubusercontent.com/Philio/PreferenceCompatExtended/master/side-by-side.png)
 
-Currently works well and has been tested on a wide variety of SDK 14+ devices/emulators, better support for earlier versions will be added later.
+Minimum SDK is 11 to align with NumberPicker.
 
-Current minimum SDK is 11 to align with NumberPicker, this will be changed to a back ported version in a future version to support 7+.
-
-Contributions are very welcome, please submit a pull request.
+Contributions are welcome, please submit a pull request.
 
 ## Download
 
@@ -18,7 +16,7 @@ Contributions are very welcome, please submit a pull request.
 
 Add the following to your `build.gradle`:
 
-    compile 'me.philio:preferencecompatextended:1.0.0'
+    compile 'me.philio:preferencecompatextended:1.1.0'
     
 The latest v7 and v14 preference libraries are included and are not required
     
@@ -66,9 +64,7 @@ In your theme just set the `preferenceTheme` to the provided `PreferenceTheme`:
     
 For SDK 11+ devices this inherits from `PreferenceThemeOverlay`.
 
-For SDK 14+ devices this inherits from `PreferenceThemeOverlay.v14.Material` and fixes a number of bugs that currently exist in the Google libraries.
-
-Some of the styling fixes were taken from or inspired by: https://github.com/Gericop/Android-Support-Preference-V7-Fix
+For SDK 14+ devices this inherits from `PreferenceThemeOverlay.v14.Material`.
 
 ## License
 

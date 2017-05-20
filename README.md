@@ -2,7 +2,7 @@
 
 ## About
 
-An extension of the Preference support library that includes a NumberPicker dialog (no longer contains patches for Support library bugs as they've all been fixed).
+An extension of the Preference support library that originally fixed various bugs found in early versions (now all resolved). Currently includes a customisable NumberPickerPreference and TimePickerPreference. 
 
 ![](https://raw.githubusercontent.com/Philio/PreferenceCompatExtended/master/side-by-side.png)
 
@@ -16,7 +16,7 @@ Contributions are welcome, please submit a pull request.
 
 Add the following to your `build.gradle`:
 
-    compile 'me.philio:preferencecompatextended:1.1.0'
+    compile 'me.philio:preferencecompatextended:1.2.0'
     
 The latest v7 and v14 preference libraries are included and are not required
     
@@ -88,7 +88,7 @@ For SDK 14+ devices this inherits from `PreferenceThemeOverlay.v14.Material`.
 
 ## License
 
-Copyright 2015 Phil Bayfield  
+Copyright 2015-2017 Phil Bayfield  
 Copyright (C) 2015 The Android Open Source Project
 
 Licensed under the Apache License, Version 2.0 (the "License");

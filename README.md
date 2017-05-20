@@ -56,6 +56,26 @@ Note: Full package name is not required as the preferences are in the same packa
 * `wrapSelectorWheel` - Sets whether the selector wheel should wrap around the minimum and maximum values
 * `subtitleText` - Set the subtitle text, shown to the right of the number picker in the dialog
 
+### TimePickerPreference
+
+#### Add to XML
+
+    <TimePickerPreference
+        android:key="time_picker"
+        android:title="A time picker preference"
+        app:defaultHours="10"
+        app:defaultMins="0"
+        app:timeAsSummary="true" />
+
+#### Custom attributes
+
+* `timeAsSummary` - When `true`, sets the currently selected time as the summary text (default)
+* `timeFormat` - Time formatting method, either `inherit` to use system setting or `hours12`/`hours24` for 12 and 24 hour settings, automatically set to `custom` when `timeFormatString` is set
+* `timeFormatString` - Format string to be passed to `SimpleDateFormat`, overrides `timeFormat` if set
+* `defaultHours` - Set the default value in hours, requires `defaultMins`
+* `defaultMins` - Set the default value in minutes, requires `defaultHours`
+* `dialogTimeFormat` - Set the dialog 24 hour setting, either `inherit` to use system setting or `hours12`/`hours24` for 12 and 24 hour settings
+
 ## Styling
 
 In your theme just set the `preferenceTheme` to the provided `PreferenceTheme`:

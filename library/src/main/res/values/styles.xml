@@ -3,10 +3,13 @@
 
     <style name="PreferenceTheme" parent="PreferenceThemeOverlay">
         <item name="numberPickerPreferenceStyle">@style/Preference.DialogPreference.NumberPickerPreference</item>
+        <item name="timePickerPreferenceStyle">@style/Preference.DialogPreference.TimePickerPreference</item>
     </style>
 
     <style name="Preference.DialogPreference.NumberPickerPreference">
         <item name="dialogLayout">@layout/preference_dialog_numberpicker</item>
     </style>
+
+    <style name="Preference.DialogPreference.TimePickerPreference"/>
 
 </resources>

@@ -1,5 +1,6 @@
 package android.support.v7.preference;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Parcel;
@@ -87,18 +88,15 @@ public class NumberPickerPreference extends DialogPreference {
         return value;
     }
 
-    @Override
-    protected Object onGetDefaultValue(TypedArray a, int index) {
+    @Override protected Object onGetDefaultValue(TypedArray a, int index) {
         return a.getInt(index, minValue > 0 ? minValue : 0);
     }
 
-    @Override
-    protected void onSetInitialValue(boolean restorePersistedValue, Object defaultValue) {
+    @Override protected void onSetInitialValue(boolean restorePersistedValue, Object defaultValue) {
         setValue(restorePersistedValue ? getPersistedInt(value) : (Integer) defaultValue);
     }
 
-    @Override
-    protected Parcelable onSaveInstanceState() {
+    @Override protected Parcelable onSaveInstanceState() {
         final Parcelable superState = super.onSaveInstanceState();
         if (isPersistent()) {
             return superState;
@@ -116,8 +114,7 @@ public class NumberPickerPreference extends DialogPreference {
         return savedState;
     }
 
-    @Override
-    protected void onRestoreInstanceState(Parcelable state) {
+    @Override protected void onRestoreInstanceState(Parcelable state) {
         if (state == null || !state.getClass().equals(SavedState.class)) {
             super.onRestoreInstanceState(state);
             return;
@@ -146,7 +143,8 @@ public class NumberPickerPreference extends DialogPreference {
         private String subtitleText;
         private int value;
 
-        public SavedState(Parcel source) {
+        @SuppressLint("ParcelClassLoader")
+        SavedState(Parcel source) {
             super(source);
             minValue = source.readInt();
             maxValue = source.readInt();
@@ -158,12 +156,11 @@ public class NumberPickerPreference extends DialogPreference {
             value = source.readInt();
         }
 
-        public SavedState(Parcelable superState) {
+        SavedState(Parcelable superState) {
             super(superState);
         }
 
-        @Override
-        public void writeToParcel(Parcel dest, int flags) {
+        @Override public void writeToParcel(Parcel dest, int flags) {
             super.writeToParcel(dest, flags);
             dest.writeInt(minValue);
             dest.writeInt(maxValue);
@@ -178,15 +175,16 @@ public class NumberPickerPreference extends DialogPreference {
         public static final Parcelable.Creator<SavedState> CREATOR =
                 new Parcelable.Creator<SavedState>() {
 
-                    public SavedState createFromParcel(Parcel in) {
-                        return new SavedState(in);
+                    @Override public SavedState createFromParcel(Parcel source) {
+                        return new SavedState(source);
                     }
 
-                    public SavedState[] newArray(int size) {
+                    @Override public SavedState[] newArray(int size) {
                         return new SavedState[size];
                     }
 
                 };
+
     }
 
 }

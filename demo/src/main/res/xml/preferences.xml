@@ -27,6 +27,12 @@
             app:summaryFormat="%d is the selected number"
             app:valueAsSummary="true"
             app:wrapSelectorWheel="false" />
+        <TimePickerPreference
+            android:key="time_picker_1"
+            android:title="A time picker"
+            app:defaultHours="10"
+            app:defaultMins="0"
+            app:timeAsSummary="true"/>
         <EditTextPreference
             android:defaultValue=""
             android:key="edit_text"

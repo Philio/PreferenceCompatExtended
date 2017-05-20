@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="Theme">
-        <!-- Default style for NumberPickerPreference. -->
+        <!-- Default style for NumberPickerPreference -->
         <attr name="numberPickerPreferenceStyle" format="reference" />
+        <!-- Default style for TimePickerPreference -->
+        <attr name="timePickerPreferenceStyle" format="reference" />
     </declare-styleable>
 
     <declare-styleable name="NumberPickerPreference">
@@ -17,5 +19,23 @@
         </attr>
         <attr name="wrapSelectorWheel" format="boolean" />
         <attr name="subtitleText" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="TimePickerPreference">
+        <attr name="timeAsSummary" format="boolean" />
+        <attr name="timeFormat" format="enum">
+            <enum name="inherit" value="0" />
+            <enum name="hours12" value="1" />
+            <enum name="hours24" value="2" />
+            <enum name="custom" value="3" />
+        </attr>
+        <attr name="timeFormatString" format="string" />
+        <attr name="defaultHours" format="integer" />
+        <attr name="defaultMins" format="integer" />
+        <attr name="dialogTimeFormat" format="enum">
+            <enum name="inherit" value="0" />
+            <enum name="hours12" value="1" />
+            <enum name="hours24" value="2" />
+        </attr>
     </declare-styleable>
 </resources>

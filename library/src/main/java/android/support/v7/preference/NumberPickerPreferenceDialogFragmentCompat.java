@@ -24,8 +24,7 @@ public class NumberPickerPreferenceDialogFragmentCompat extends PreferenceDialog
         return fragment;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
+    @Override public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (savedInstanceState != null) {
             restoredState = true;
@@ -33,14 +32,12 @@ public class NumberPickerPreferenceDialogFragmentCompat extends PreferenceDialog
         }
     }
 
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
+    @Override public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(STATE_PICKER_VALUE, numberPicker.getValue());
     }
 
-    @Override
-    protected void onBindDialogView(View view) {
+    @Override protected void onBindDialogView(View view) {
         NumberPickerPreference preference = getNumberPickerPreference();
 
         numberPicker = (NumberPicker) view.findViewById(R.id.numberpicker);
@@ -57,8 +54,7 @@ public class NumberPickerPreferenceDialogFragmentCompat extends PreferenceDialog
         textView.setText(preference.getSubtitleText());
     }
 
-    @Override
-    public void onDialogClosed(boolean positiveResult) {
+    @Override public void onDialogClosed(boolean positiveResult) {
         if (positiveResult) {
             int value = numberPicker.getValue();
             if (getNumberPickerPreference().callChangeListener(value)) {

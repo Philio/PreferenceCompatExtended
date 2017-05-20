@@ -3,9 +3,14 @@
 
     <style name="PreferenceTheme" parent="PreferenceThemeOverlay.v14.Material">
         <item name="numberPickerPreferenceStyle">@style/Preference.DialogPreference.NumberPickerPreference.Material</item>
+        <item name="timePickerPreferenceStyle">@style/Preference.DialogPreference.TimePickerPreference.Material</item>
     </style>
 
     <style name="Preference.DialogPreference.NumberPickerPreference.Material">
+        <item name="android:layout">@layout/preference_material</item>
+    </style>
+
+    <style name="Preference.DialogPreference.TimePickerPreference.Material">
         <item name="android:layout">@layout/preference_material</item>
     </style>
 

@@ -86,6 +86,10 @@ For SDK 11+ devices this inherits from `PreferenceThemeOverlay`.
 
 For SDK 14+ devices this inherits from `PreferenceThemeOverlay.v14.Material`.
 
+To ensure correct styling of the `TimePicker` on all L+ devices you may need to add a `timePickerDialogTheme` to your app theme:
+
+    <item name="android:timePickerDialogTheme">@style/MyTimePickerDialogTheme</item>
+
 ## License
 
 Copyright 2015-2017 Phil Bayfield  

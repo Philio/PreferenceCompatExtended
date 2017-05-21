@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -6,14 +7,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="preferenceTheme">@style/PreferenceTheme</item>
         <item name="alertDialogTheme">@style/AppTheme.AlertDialog</item>
-    </style>
-
-    <style name="AppTheme.AlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
-    <style name="AppTheme.TimePickerDialog" parent="Theme.AppCompat.Light.Dialog">
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:timePickerDialogTheme">@style/AppTheme.TimePickerDialog</item>
     </style>
 
 </resources>

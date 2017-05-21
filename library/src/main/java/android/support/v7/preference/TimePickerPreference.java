@@ -36,7 +36,7 @@ public class TimePickerPreference extends DialogPreference {
         super(context, attrs, defStyleAttr, defStyleRes);
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.TimePickerPreference, defStyleAttr, defStyleRes);
-        timeAsSummary = typedArray.getBoolean(R.styleable.TimePickerPreference_timeAsSummary, false);
+        timeAsSummary = typedArray.getBoolean(R.styleable.TimePickerPreference_timeAsSummary, true);
         timeFormat = typedArray.getInt(R.styleable.TimePickerPreference_timeFormat, 0);
         timeFormatString = typedArray.getString(R.styleable.TimePickerPreference_timeFormatString);
         if (timeFormatString != null) {

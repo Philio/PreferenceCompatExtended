@@ -27,7 +27,9 @@ public class TimePickerPreferenceDialogFragmentCompat extends PreferenceDialogFr
 
     @Override public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         TimePickerPreference preference = (TimePickerPreference) getPreference();
-        preference.setValue(hourOfDay, minute);
+        if (preference.callChangeListener(TimePickerPreference.calculateValue(hourOfDay, minute))) {
+            preference.setValue(hourOfDay, minute);
+        }
     }
 
 }
